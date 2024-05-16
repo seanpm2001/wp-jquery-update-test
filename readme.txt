@@ -3,33 +3,34 @@ Contributors: wordpressdotorg, azaozz
 Tags: jquery
 Requires at least: 6.5
 Tested up to: 6.6
-Stable tag: 3.0
+Stable tag: 3.0.0
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Test different versions of jQuery and jQuery UI.
+Test different versions of jQuery.
 
 == Description ==
 
-Test jQuery Updates is an official plugin by the WordPress team that is intended for testing of different versions of jQuery and jQuery UI before updating them in WordPress. It is not intended for use in production.
+Test jQuery Updates is an official plugin by the WordPress team that is intended for testing of jQuery and jQuery UI before updating them in WordPress. It is not intended for use in production.
 
-It includes jQuery 3.5.1, jQuery Migrate 3.3.2, and jQuery UI 1.12.1. jQuery UI has been re-built for full backwards compatibility with WordPress.
+Version 3.0 of the plugin is intended for testing of jQuery 4.0.0-beta in WordPress 6.5 and 6.6.
 
-To test:
-
-1. Use the current version of jQuery in WordPress but disable jQuery Migrate.
-2. Latest jQuery, currently 3.5.1, with the latest jQuery Migrate.
-3. Latest jQuery with the latest jQuery Migrate and latest jQuery UI.
-4. As above without jQuery Migrate.
-
-If you find a bug in a jQuery related script [please report it](https://github.com/WordPress/wp-jquery-update-test). Instructions are available at the plugin's settings page.
+If you find a bug in a jQuery related script [please report it](https://github.com/WordPress/wp-jquery-update-test).
 
 = Default settings =
 
-When activated this plugin will not replace the current jQuery but will disable jQuery Migrate. For more information about jQuery Migrate please visit: [https://github.com/jquery/jquery-migrate/](https://github.com/jquery/jquery-migrate/).
+When activated this plugin will replace the bundled version of jQuery with the version from this plugin. There are no other settings at this time. To stop testing please deactivate the plugin.
 
 == Changelog ==
+
+= 3.0 =
+* Update for testing jQuery 4.0.0-beta in WordPress 6.5 and 6.6.
+
+= 2.0 =
+* Update for use in WordPress 5.6.
+* Remove testing of different versions of jQuery UI.
+* Change the default for jQuery Migrate to "enabled".
 
 = 1.0.2 =
 * Update jQuery Migrate to 3.3.2.
