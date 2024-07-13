@@ -40,8 +40,10 @@ class WP_Jquery_Update_Test {
 	public static function replace_scripts( $scripts ) {
 		$assets_url = plugins_url( 'assets/', __FILE__ );
 		
-		// Set 'jquery-core' to 4.0.0-beta
+		// Use 'jquery-core' 4.0.0-beta, and 'jquery-migrate' 3.5.0.
+		self::set_script( $scripts, 'jquery', false, array( 'jquery-core', 'jquery-migrate' ), '4.0.0-beta' );
 		self::set_script( $scripts, 'jquery-core', $assets_url . 'jquery-4.0.0-beta.js', array(), '4.0.0-beta' );
+		self::set_script( $scripts, 'jquery-migrate', $assets_url . 'jquery-migrate-3.5.0.js', array(), '3.5.0' );
 	}
 
 	// Pre-register scripts on 'wp_default_scripts' action, they won't be overwritten by $wp_scripts->add().
@@ -83,13 +85,21 @@ class WP_Jquery_Update_Test {
 		</p>
 
 		<p>
-			<?php _e( 'Currently only jQuery 4.0.0-beta is included. Updated jQuery Migrate and jQuery UI will be included when they become available.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'Currently jQuery 4.0.0-beta and jQuery Migrate 3.5.0 are included. An updated version of jQuery UI may be included when it becomes available.', 'wp-jquery-update-test' ); ?>
 		</p>
 		
 		<p>
-			<?php _e( 'Activating Test jQuery Updates will replace the current bundled version of jQuery with the version from this plugin.', 'wp-jquery-update-test' ); ?>
+			<?php _e( 'Activating Test jQuery Updates will replace the current bundled version of jQuery and jQuery Migrate with the versions from this plugin.', 'wp-jquery-update-test' ); ?>
 			<?php _e( 'There are no other settings at this time. To stop testing please deactivate the plugin.', 'wp-jquery-update-test' ); ?>
 		</p>
+		
+		<p>
+			<?php printf(
+				__( 'If you find a bug in a jQuery related script <a href="%s">please report it</a>.', 'wp-jquery-update-test' ),
+				esc_url( 'https://github.com/WordPress/wp-jquery-update-test/issues' )
+			); ?>
+		</p>
+
 		
 		<p>
 			<?php _e( 'To help with testing this plugin prints information about the currently loaded versions of jQuery, jQuery Migrate, and jQuery UI in the browser console.', 'wp-jquery-update-test' ); ?>

@@ -5,7 +5,7 @@
  * Description: A feature plugin to help with testing updates of the jQuery and jQuery UI JavaScript libraries (not intended for use in production).
  * Version: 3.0
  * Requires at least: 6.5
- * Tested up to: 6.6
+ * Tested up to: 6.7
  * Requires PHP: 7.0
  * Author: The WordPress Team
  * Author URI: https://wordpress.org
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Invalid request.' );
 }
 
-// Only for WP 6.5 and 6.6 (alpha, beta, RC, and release)
-if ( version_compare( $GLOBALS['wp_version'], '6.5', '>=' ) && version_compare( $GLOBALS['wp_version'], '6.7-alpha', '<' ) ) {
+// Only for WP 6.5, 6.6, and 6.7 (alpha, beta, RC, and release)
+if ( version_compare( $GLOBALS['wp_version'], '6.5', '>=' ) && version_compare( $GLOBALS['wp_version'], '6.8-alpha', '<' ) ) {
 	include_once __DIR__ . '/class_wp_jquery_update_test.php';
 }
