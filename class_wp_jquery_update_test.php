@@ -129,9 +129,9 @@ class WP_Jquery_Update_Test {
 	 * Set defaults on activation.
 	 */
 	public static function activate() {
-		// register_uninstall_hook( __FILE__, array( __CLASS__, 'uninstall' ) );
+		register_uninstall_hook( __FILE__, array( __CLASS__, 'uninstall' ) );
 
-		// Clen up old options
+		// Clean up old options
 		delete_site_option( 'wp-jquery-test-settings' );
 	}
 
